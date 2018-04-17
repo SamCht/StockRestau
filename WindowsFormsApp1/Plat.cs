@@ -9,8 +9,8 @@ namespace WindowsFormsApp1
     class Plat
     {
         private string nom;
-        private double prix;
-        private int quantite;
+        private string prix;
+        private string quantite;
 
         public string Nom
         {
@@ -18,13 +18,13 @@ namespace WindowsFormsApp1
             set { nom = value; }
         }
 
-        public double Prix
+        public string Prix
         {
             get { return prix; }
             set { prix = value; }
         }
 
-        public int Quantite
+        public string Quantite
         {
             get { return quantite; }
             set { quantite = value; }
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
 
         public Plat() { }
-        public Plat(string no, double px, int qt)
+        public Plat(string no, string px, string qt)
         {
             nom = no;
             prix = px;

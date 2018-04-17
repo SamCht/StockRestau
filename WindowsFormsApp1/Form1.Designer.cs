@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nomR = new System.Windows.Forms.TextBox();
+            this.nomAj = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.prixAj = new System.Windows.Forms.TextBox();
+            this.qteAj = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.nomSup = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -48,22 +48,23 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Recherche Plat";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // nomR
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Nom";
+            this.nomR.Location = new System.Drawing.Point(56, 75);
+            this.nomR.Name = "nomR";
+            this.nomR.Size = new System.Drawing.Size(100, 22);
+            this.nomR.TabIndex = 1;
+            this.nomR.Text = "Nom";
             // 
-            // textBox2
+            // nomAj
             // 
-            this.textBox2.Location = new System.Drawing.Point(56, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Nom ";
+            this.nomAj.Location = new System.Drawing.Point(56, 136);
+            this.nomAj.Name = "nomAj";
+            this.nomAj.Size = new System.Drawing.Size(100, 22);
+            this.nomAj.TabIndex = 2;
+            this.nomAj.Text = "Nom ";
             // 
             // button2
             // 
@@ -73,22 +74,23 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Ajouter Plat";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox3
+            // prixAj
             // 
-            this.textBox3.Location = new System.Drawing.Point(56, 164);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Prix";
+            this.prixAj.Location = new System.Drawing.Point(56, 164);
+            this.prixAj.Name = "prixAj";
+            this.prixAj.Size = new System.Drawing.Size(100, 22);
+            this.prixAj.TabIndex = 4;
+            this.prixAj.Text = "Prix";
             // 
-            // textBox4
+            // qteAj
             // 
-            this.textBox4.Location = new System.Drawing.Point(56, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.Text = "Quantité";
+            this.qteAj.Location = new System.Drawing.Point(56, 192);
+            this.qteAj.Name = "qteAj";
+            this.qteAj.Size = new System.Drawing.Size(100, 22);
+            this.qteAj.TabIndex = 5;
+            this.qteAj.Text = "Quantité";
             // 
             // button3
             // 
@@ -99,13 +101,13 @@
             this.button3.Text = "Supprimer Plat";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // nomSup
             // 
-            this.textBox5.Location = new System.Drawing.Point(56, 307);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 7;
-            this.textBox5.Text = "Nom";
+            this.nomSup.Location = new System.Drawing.Point(56, 307);
+            this.nomSup.Name = "nomSup";
+            this.nomSup.Size = new System.Drawing.Size(100, 22);
+            this.nomSup.TabIndex = 7;
+            this.nomSup.Text = "Nom";
             // 
             // button4
             // 
@@ -124,6 +126,7 @@
             this.button5.TabIndex = 9;
             this.button5.Text = "Quitter";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
@@ -132,13 +135,13 @@
             this.ClientSize = new System.Drawing.Size(701, 565);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.nomSup);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.qteAj);
+            this.Controls.Add(this.prixAj);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nomAj);
+            this.Controls.Add(this.nomR);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -150,13 +153,13 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nomR;
+        private System.Windows.Forms.TextBox nomAj;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox prixAj;
+        private System.Windows.Forms.TextBox qteAj;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox nomSup;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
     }

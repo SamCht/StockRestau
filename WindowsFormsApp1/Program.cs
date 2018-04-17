@@ -13,19 +13,7 @@ namespace WindowsFormsApp1
         /// </summary>
         [STAThread]
 
-        static int Rechercher(List<Plat> L, String plat)             //fonction qui permet de vérifier l'existence d'un plat
-        {
-            int p = -1;
-            for (int i = 0; i < L.Count; i++)
-            {
-                if (L[i].Nom == plat)
-                {
-                    p = i;
-                    break;
-                }
-            }
-            return p;
-        }
+        
 
         static void Main()
         {
