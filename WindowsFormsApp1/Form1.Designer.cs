@@ -42,9 +42,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(162, 61);
+            this.button1.Location = new System.Drawing.Point(122, 50);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 51);
+            this.button1.Size = new System.Drawing.Size(157, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "Recherche Plat";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,25 +53,28 @@
             // 
             // nomR
             // 
-            this.nomR.Location = new System.Drawing.Point(56, 75);
+            this.nomR.Location = new System.Drawing.Point(42, 61);
+            this.nomR.Margin = new System.Windows.Forms.Padding(2);
             this.nomR.Name = "nomR";
-            this.nomR.Size = new System.Drawing.Size(100, 22);
+            this.nomR.Size = new System.Drawing.Size(76, 20);
             this.nomR.TabIndex = 1;
             this.nomR.Text = "Nom";
             // 
             // nomAj
             // 
-            this.nomAj.Location = new System.Drawing.Point(56, 136);
+            this.nomAj.Location = new System.Drawing.Point(42, 110);
+            this.nomAj.Margin = new System.Windows.Forms.Padding(2);
             this.nomAj.Name = "nomAj";
-            this.nomAj.Size = new System.Drawing.Size(100, 22);
+            this.nomAj.Size = new System.Drawing.Size(76, 20);
             this.nomAj.TabIndex = 2;
             this.nomAj.Text = "Nom ";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(162, 136);
+            this.button2.Location = new System.Drawing.Point(122, 110);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 78);
+            this.button2.Size = new System.Drawing.Size(157, 63);
             this.button2.TabIndex = 3;
             this.button2.Text = "Ajouter Plat";
             this.button2.UseVisualStyleBackColor = true;
@@ -78,51 +82,58 @@
             // 
             // prixAj
             // 
-            this.prixAj.Location = new System.Drawing.Point(56, 164);
+            this.prixAj.Location = new System.Drawing.Point(42, 133);
+            this.prixAj.Margin = new System.Windows.Forms.Padding(2);
             this.prixAj.Name = "prixAj";
-            this.prixAj.Size = new System.Drawing.Size(100, 22);
+            this.prixAj.Size = new System.Drawing.Size(76, 20);
             this.prixAj.TabIndex = 4;
             this.prixAj.Text = "Prix";
             // 
             // qteAj
             // 
-            this.qteAj.Location = new System.Drawing.Point(56, 192);
+            this.qteAj.Location = new System.Drawing.Point(42, 156);
+            this.qteAj.Margin = new System.Windows.Forms.Padding(2);
             this.qteAj.Name = "qteAj";
-            this.qteAj.Size = new System.Drawing.Size(100, 22);
+            this.qteAj.Size = new System.Drawing.Size(76, 20);
             this.qteAj.TabIndex = 5;
             this.qteAj.Text = "Quantité";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(162, 294);
+            this.button3.Location = new System.Drawing.Point(122, 239);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(209, 49);
+            this.button3.Size = new System.Drawing.Size(157, 40);
             this.button3.TabIndex = 6;
             this.button3.Text = "Supprimer Plat";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // nomSup
             // 
-            this.nomSup.Location = new System.Drawing.Point(56, 307);
+            this.nomSup.Location = new System.Drawing.Point(42, 249);
+            this.nomSup.Margin = new System.Windows.Forms.Padding(2);
             this.nomSup.Name = "nomSup";
-            this.nomSup.Size = new System.Drawing.Size(100, 22);
+            this.nomSup.Size = new System.Drawing.Size(76, 20);
             this.nomSup.TabIndex = 7;
             this.nomSup.Text = "Nom";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(162, 407);
+            this.button4.Location = new System.Drawing.Point(122, 331);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 54);
+            this.button4.Size = new System.Drawing.Size(157, 44);
             this.button4.TabIndex = 8;
             this.button4.Text = "Afficher tous les plats";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(452, 474);
+            this.button5.Location = new System.Drawing.Point(339, 385);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(204, 73);
+            this.button5.Size = new System.Drawing.Size(153, 59);
             this.button5.TabIndex = 9;
             this.button5.Text = "Quitter";
             this.button5.UseVisualStyleBackColor = true;
@@ -130,9 +141,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 565);
+            this.ClientSize = new System.Drawing.Size(526, 459);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.nomSup);
@@ -143,6 +154,7 @@
             this.Controls.Add(this.nomAj);
             this.Controls.Add(this.nomR);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

@@ -42,5 +42,7 @@ namespace WindowsFormsApp1
         {
             return "\r\nNom: " + nom + "\r\nPrix: " + prix + "\r\nQuantité: " + quantite;
         }
+
+       
     }
 }

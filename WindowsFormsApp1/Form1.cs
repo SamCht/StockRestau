@@ -8,24 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        static int Rechercher(List<Plat> L, String nom)             //fonction qui permet de vérifier l'existence d'un plat
+       static Plat Rechercher(List<Plat> pl, String nom)
         {
-            int p = 0;
-            for (int i = 0; i < L.Count; i++)
+            foreach (Plat p in pl)
             {
-                if (L[i].Nom == nom)
+                if (p.Nom == nom)
                 {
-                    p = 1;
-                    break;
+                    return p;
                 }
             }
-            return p;
+
+            return null;
         }
+
         List<Plat> listeP = new List<Plat>();
+
         public Form1()
         {
             InitializeComponent();
@@ -38,8 +40,8 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int P = Rechercher(listeP, nomR.Text);
-            if(P == 0){
+            Plat p = Rechercher(listeP, nomR.Text);
+            if(p == null){
                 MessageBox.Show("Le plat n'existe pas.");
             } else
             {
@@ -54,5 +56,20 @@ namespace WindowsFormsApp1
             listeP.Add(p);
             MessageBox.Show(p.Quantite + " plats " + p.Nom + " au prix de " + p.Prix + " ont bien été enregistrés.");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           if(Rechercher(listeP,nomSup.Text) != null)
+            {
+                listeP.Remove(Rechercher(listeP, nomSup.Text));
+                MessageBox.Show("Le plat a été supprimé");
+            }
+            else
+            {
+                MessageBox.Show("Impossible de supprimé le plat car il n'existe pas");
+            }
+        }
+
+       
     }
 }
