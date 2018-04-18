@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
         private string nom;
         private string prix;
         private string quantite;
-        protected List<Plat> maListePlats;
+    
 
         public string Nom
         {
@@ -43,16 +43,6 @@ namespace WindowsFormsApp1
         {
             return "\r\nNom: " + nom + "\r\nPrix: " + prix + "\r\nQuantité: " + quantite;
         }
-
-        public void ajouterPlat(Plat p)
-        {
-            maListePlats.Add(p);
-        }
-        public List<Plat> getPlats()
-        {
-            return maListePlats;
-        }
-
-        
+  
     }
 }
