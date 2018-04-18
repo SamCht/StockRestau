@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.DAO
 {
     public class DAO
     {
-        private static string connectionString = @"Data Source=C:\Users\Vesti\Documents\StockRestauDB.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
+        private static string connectionString = @"Data Source=C:\Users\Samuel\Documents\Visual Studio 2017\Projects\StockRestau\StockRestauDB.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
 
         public static List<Plat> GetAllPlats()
         {
@@ -20,14 +20,14 @@ namespace WindowsFormsApp1.DAO
                 {
                     conn.Open();
                     string sql = "SELECT * FROM Plat";
-      
+
                     using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
                     {
                         using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                Plat pl= new Plat();
+                                Plat pl = new Plat();
                                 pl.Nom = reader["nom"].ToString();
                                 pl.Prix = reader["prix"].ToString();
                                 pl.Quantite = reader["quantite"].ToString();
@@ -47,13 +47,39 @@ namespace WindowsFormsApp1.DAO
             return listePlats;
         }
 
-        public static void addPlat(Plat c)
+        public static void addPlat(String id, String nom, String prix, String quantite)
         {
             using (SQLiteConnection conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
+                
+                using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = "INSERT INTO Plat(id,nom,prix,quantite) VALUES (@id,@nom,@prix,@quantite)";
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@id", id, "@nom", nom, "@prix", prix, "@quantite", quantite);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Plat pl = new Plat();
+                            pl.Nom = reader["nom"].ToString();
+                            pl.Prix = reader["prix"].ToString();
+                            pl.Quantite = reader["quantite"].ToString();
+                            
+                        }
+                    }
+                }
+            }
+        }
 
-                string sql = "INSERT INTO Plat VALUES (" + id + "," + nom + "," + prix + "," + quantite + ")";
+        public static void deletePlat(Plat unPlat)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                List<Plat> listePlat = GetAllPlats();
+                listePlat.Remove(unPlat);
             }
         }
     }
