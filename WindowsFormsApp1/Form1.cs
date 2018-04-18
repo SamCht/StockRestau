@@ -27,6 +27,7 @@ namespace WindowsFormsApp1
         }
 
         List<Plat> listeP = new List<Plat>();
+        
 
         public Form1()
         {
@@ -52,8 +53,9 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             Plat p = new Plat(nomAj.Text, prixAj.Text, qteAj.Text);
-            
+
             listeP.Add(p);
+            
             MessageBox.Show(p.Quantite + " plats " + p.Nom + " au prix de " + p.Prix + " ont bien été enregistrés.");
         }
 
@@ -70,6 +72,10 @@ namespace WindowsFormsApp1
             }
         }
 
-       
+        private void button4_Click(object sender, EventArgs e)
+        {
+            TousPlatsView monForm = new TousPlatsView(listeP);
+            monForm.Show();
+        }
     }
 }
