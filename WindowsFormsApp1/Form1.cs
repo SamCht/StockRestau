@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.DAO;
 
 
 namespace WindowsFormsApp1
@@ -16,6 +15,8 @@ namespace WindowsFormsApp1
     {
        static Plat Rechercher(List<Plat> pl, String nom)
         {
+            DAO acces = new DAO();
+            pl = acces.GetAllPlats();
             foreach (Plat p in pl)
             {
                 if (p.Nom == nom)
@@ -53,28 +54,47 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Plat p = new Plat(nomAj.Text, prixAj.Text, qteAj.Text);
-
-            listeP.Add(p);
-            
-            MessageBox.Show(p.Quantite + " plats " + p.Nom + " au prix de " + p.Prix + " ont bien été enregistrés.");
+            //Plat p = new Plat(nomAj.Text, prixAj.Text, qteAj.Text);
+            //listeP.Add(p);
+            //MessageBox.Show(p.Quantite + " plats " + p.Nom + " au prix de " + p.Prix + " ont bien été enregistrés.");
+            DAO plat = new DAO();
+            int result = plat.addPlat(id.Text, nomAj.Text, prixAj.Text, qteAj.Text);
+            if(result == -1)
+            {
+                MessageBox.Show("NTM");
+            } else
+            {
+                MessageBox.Show("Bien");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-           if(Rechercher(listeP,nomSup.Text) != null)
+            /*if(Rechercher(listeP,nomSup.Text) != null)
+             {
+                 listeP.Remove(Rechercher(listeP, nomSup.Text));
+                 MessageBox.Show("Le plat a été supprimé");
+             }
+             else
+             {
+                 MessageBox.Show("Impossible de supprimé le plat car il n'existe pas");
+             }*/
+            DAO acces = new DAO();
+            int result = acces.deletePlat(nomSup.Text);
+            if (result == -1)
             {
-                listeP.Remove(Rechercher(listeP, nomSup.Text));
-                MessageBox.Show("Le plat a été supprimé");
+                MessageBox.Show("NTM");
             }
             else
             {
-                MessageBox.Show("Impossible de supprimé le plat car il n'existe pas");
+                MessageBox.Show("Bien");
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            DAO acces = new DAO();
+            listeP = acces.GetAllPlats();
             TousPlatsView monForm = new TousPlatsView(listeP);
             monForm.Show();
         }
