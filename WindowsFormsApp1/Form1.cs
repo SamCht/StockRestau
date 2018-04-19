@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Le plat n'existe pas.");
             } else
             {
-                MessageBox.Show("Le plat existe.");
+                MessageBox.Show("Le plat " + p.Nom + " au prix de " + p.Prix + " € est disponnible. Quantité : " +p.Quantite);
             }
         }
 
@@ -61,10 +61,10 @@ namespace WindowsFormsApp1
             int result = plat.addPlat(nomAj.Text, prixAj.Text, qteAj.Text);
             if(result == -1)
             {
-                MessageBox.Show("NTM");
+                MessageBox.Show("Erreur ajout du plat.");
             } else
             {
-                MessageBox.Show("Bien");
+                MessageBox.Show("Le plat a bien été ajouté.");
             }
         }
 
@@ -83,11 +83,11 @@ namespace WindowsFormsApp1
             int result = acces.deletePlat(nomSup.Text);
             if (result == -1)
             {
-                MessageBox.Show("NTM");
+                MessageBox.Show("Erreur de suppression.");
             }
             else
             {
-                MessageBox.Show("Bien");
+                MessageBox.Show("Le plat a bien été supprimé.");
             }
         }
 
