@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
     {
        static Plat Rechercher(List<Plat> pl, String nom)
         {
-            DAO acces = new DAO();
+            platDAO acces = new platDAO();
             pl = acces.GetAllPlats();
             foreach (Plat p in pl)
             {
@@ -57,8 +57,8 @@ namespace WindowsFormsApp1
             //Plat p = new Plat(nomAj.Text, prixAj.Text, qteAj.Text);
             //listeP.Add(p);
             //MessageBox.Show(p.Quantite + " plats " + p.Nom + " au prix de " + p.Prix + " ont bien été enregistrés.");
-            DAO plat = new DAO();
-            int result = plat.addPlat(id.Text, nomAj.Text, prixAj.Text, qteAj.Text);
+            platDAO plat = new platDAO();
+            int result = plat.addPlat(nomAj.Text, prixAj.Text, qteAj.Text);
             if(result == -1)
             {
                 MessageBox.Show("NTM");
@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
              {
                  MessageBox.Show("Impossible de supprimé le plat car il n'existe pas");
              }*/
-            DAO acces = new DAO();
+            platDAO acces = new platDAO();
             int result = acces.deletePlat(nomSup.Text);
             if (result == -1)
             {
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DAO acces = new DAO();
+            platDAO acces = new platDAO();
             listeP = acces.GetAllPlats();
             TousPlatsView monForm = new TousPlatsView(listeP);
             monForm.Show();
